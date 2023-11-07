@@ -1,7 +1,7 @@
-function Post({ title, body, image, tags, comments, upvotes}) {
+function Question({ title, body, image, tags, comments, upvotes}) {
 
     return(
-        <div className="Post">
+        <div className="Question">
             <h2>{title}</h2>
             <p>{body}</p>
             {image_url && <img src={image} alt="Image not found" />}
@@ -9,4 +9,4 @@ function Post({ title, body, image, tags, comments, upvotes}) {
     )
 }
 
-export default Post
+export default Question

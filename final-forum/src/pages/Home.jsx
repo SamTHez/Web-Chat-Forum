@@ -15,11 +15,11 @@ function Home() {
     }
 
     const filterSelect = filters.map((filter, i) => {
-        if(i == activeFilter) { return(<button className='filter-btn active-filter' onClick={() => {changeFilter(i)}}>{filter}</button>)}
-        return(<button className='filter-btn inactive-filter' onClick={() => {changeFilter(i)}}>{filter}</button>)
+        if(i == activeFilter) { return(<button key="filter" className='filter-btn active-filter' onClick={() => {changeFilter(i)}}>{filter}</button>)}
+        return(<button key="filter" className='filter-btn inactive-filter' onClick={() => {changeFilter(i)}}>{filter}</button>)
     })
     
-    const postList = POSTS.map((post) => <Post {...post}/>)
+    const postList = POSTS.map((post) => <Post key={post.id} {...post}/>)
 
     return(
         <div className="Home">
