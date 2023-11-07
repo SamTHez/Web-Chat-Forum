@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap');
+
+:root {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+
+  /*Font Sizes*/
+  --xl-font: 4.2rem;
+  --l-font: 3.4rem;
+  --m-font: 2.6rem;
+  --s-font: 2rem;
+
+  /*Colors*/
+  --c-bg: #cccccc;
+  --c-text-h: #ffffff;
+  --c-text-b: #000000;
+  --c-1: #424242;
+  --c-2: #fff;
+  --c-3: #fff;
+}
+
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: var(--c-bg);
+}
+
+h1 {
+  margin: 0;
+}
+
+/*Header Component*/
+.Header {
+  background-color: var(--c-1);
+  padding: 2rem ;
+  display: flex;
+  align-items: center;
+  color: var(--c-text-h)
+}
+
+.page-header {
+  margin-right: 10rem;
+  font-size: var(--l-font);
+}
+
+a {
+  margin-right: 4rem;
+  text-decoration: none;
+  font-size: var(--m-font);
+  color: var(--c-text);
+}
+
+.search-label {
+  font-size: var(--m-font); 
+}
+
+.search-box {
+  margin-left: 1rem;
+  padding: .4rem;
+  font-size: var(--s-font);
+  border-radius: 1rem;
+  border: 2px solid #000;
+}
+
+/*Home Page*/
+.Home {
+  display: absolute;
+  color: var(--c-text-b);
+}
+
+.filter-list {
+  display: flex;
+}
+
+.filter-btn {
+  margin: 2rem;
+  padding: .5rem 2rem;
+  border: solid .2rem #555;
+  border-radius: 2rem;
+  font-size: var(--s-font);
+}
+
+.filter-btn:active {
+  opacity: .8;
+  transform: scale(.95);
+}
+
+.active-filter {
+  background-color: green;
+}
+
+.inactive-filter {
+  background-color: red;
+}
