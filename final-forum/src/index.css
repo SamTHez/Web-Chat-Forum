@@ -101,7 +101,7 @@ h1 {
 }
 
 .page-header a:hover {
-  flex: 5;
+  flex: 3;
   transition: flex .5s ease-in-out;
 }
 
@@ -250,7 +250,6 @@ a {
 /*View Page*/
 .View {
   background-color: #fff;
-  height: 70rem;
   width: 80rem;
   position: absolute;
   left: 50%;
@@ -288,6 +287,14 @@ a {
 .dp-body {
   font-size: var(--s-font);
   padding: 0rem 3rem;
+}
+
+.comment-header {
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: var(--m-font);
+  font-weight: 400;
+  padding: 1rem 3rem;
 }
 
 /*Discussion Component*/

@@ -38,7 +38,7 @@ function View() {
             </div>
             <p className='dp-body'>{post.body}</p>
             {post.image && <img href={post.image}/>}
-
+            <h3 className='comment-header'>Comments</h3>
         </div>
     )
 }

@@ -4,8 +4,6 @@ import UpvoteIcon from '../assets/upvote.svg'
 
 function Discussion({ id, type, league, title, body, image, tags, comments, upvotes }) {
 
-    
-
     const tagList = tags.map((tag) => 
         <span key={tag} className='post-tag'>
             <h4 className="tag-text">{tag}</h4>

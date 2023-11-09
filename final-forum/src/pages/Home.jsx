@@ -1,25 +1,20 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import Hero from '../components/Hero'
+import Header from '../components/Header'
 import Discussion from '../components/Discussion'
 import supabase from '../client'
 
 function Home() {
     const [activeFilter, setActiveFilter] = useState(-1)
     const [posts, setPosts] = useState([])
-    const filters = ["NFL", "MLB", "NBA", "NHL", "MLS"]
-
-    const changeFilter = (i) => {
-        if(i == activeFilter) {
-            setActiveFilter(-1);
-        } else {
-            setActiveFilter(i);
-        }
-    }
-
-    const filterSelect = filters.map((filter, i) => {
-        if(i == activeFilter) { return(<button key={filter} className='filter-btn active-filter' onClick={() => {changeFilter(i)}}>{filter}</button>)}
-        return(<button key={filter} className='filter-btn inactive-filter' onClick={() => {changeFilter(i)}}>{filter}</button>)
-    })
+    const { league } = useParams()
+    const [curLeague, setCurLeague] = useState(league)
     
+    useEffect(() => {
+        setCurLeague(league)
+    },[league])
+
     const getPosts = async() => {
         const { data, error } = await supabase
             .from("posts")
@@ -34,15 +29,15 @@ function Home() {
     const postList = posts.map((post) => <Discussion key={post.id} {...post}/>)
 
     return(
+        <>
+        {(curLeague == "general") && <Hero />}
+        <Header />
         <div className="Home">
-            {false && <div className="filter-list">
-                <h2>League: </h2>
-                {filterSelect}
-            </div>}
             <div className="post-list">
                 {postList} 
             </div>
         </div>
+        </>
     )
 }
 
