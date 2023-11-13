@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import supabase from '../client'
+import Header from '../components/Header'
 
 function Create() {
     const [post, setPost] = useState({
@@ -11,8 +12,14 @@ function Create() {
         image: "", //I want to add an image preview when the user puts a valid URL in the image section
         tags: [],
         comments: [],
-        upvotes: 0
+        upvotes: 0,
+        creationId: ""
     })
+
+    const ID_LIMIT = 10**8
+    const generateID = (max) => {
+        return Math.floor(Math.random() * max);
+    }
 
     const handleTags = (tagString) => {
         const postTags = tagString.split(",");
@@ -25,11 +32,15 @@ function Create() {
     const createPost = async (e) => {
         e.preventDefault();
 
+        const postId = generateID(ID_LIMIT)
+        console.log(postId)
         const {data, error} = await supabase
             .from("posts")
-            .insert([{id:post.id, type:post.type, league:post.league, title:post.title, body:post.body, image:post.image, tags:post.tags, comments:post.comments, upvotes:post.upvotes}]);
+            .insert([{id:postId, type:post.type, league:post.league, title:post.title, body:post.body, image:post.image, tags:post.tags, comments:post.comments, upvotes:post.upvotes, creationId:post.creationId}]);
         
-        window.location = "/"
+        console.log(data, error)
+        
+        window.location = "/home/general"
     }
 
     const handleChange = (e) => {
@@ -48,6 +59,8 @@ function Create() {
     }
 
     return(
+        <>
+        <Header />
         <div className="Create">
             <form className="create-form">
                 <span>
@@ -69,6 +82,10 @@ function Create() {
                         <option value="MLS">MLS</option>
                     </select>
                 </span>
+                <div className="form-id">
+                    <label>Post ID:</label>
+                    <input type="text" name="creationId" placeholder="**Key required for editing or deleting post later**" onChange={handleChange}/> {/*Purely for testing, implement ID genereator later and remove this input field*/}
+                </div>
                 <div className="form-title">
                     <label>Title:</label>
                     <input type="text" name="title" placeholder="Post Title" onChange={handleChange}/>
@@ -85,13 +102,10 @@ function Create() {
                     <label>Tags:</label>
                     <input type="text" name="tags" placeholder='Write tags as comma-seperated list'  onChange={handleChange}/> {/*Add 'handle tags' here*/}
                 </div>
-                <div className="form-id">
-                    <label>ID:</label>
-                    <input type="text" name="id" onChange={handleChange}/> {/*Purely for testing, implement ID genereator later and remove this input field*/}
-                </div>
                 <input type="submit" value="Create Post" className="form-submit" onClick={createPost}/>
             </form>
         </div>
+        </>
     )
 }
 

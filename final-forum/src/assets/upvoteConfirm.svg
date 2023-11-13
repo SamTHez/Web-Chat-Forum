@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg height="800px" width="800px" version="1.1" id="_x32_" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.st0{fill:#000000;}
+</style>
+  <g>
+    <path class="st0" d="M 256 0 C 114.842 0 0.002 114.84 0.002 256 C 0.002 397.16 114.842 512 256 512 C 397.158 512 511.998 397.16 511.998 256 C 511.998 114.84 397.158 0 256 0 Z M 256 51.785 C 360.334 51.785 460.216 151.664 460.216 256 C 460.216 360.336 360.334 460.215 256 460.215 C 151.666 460.215 51.783 360.336 51.783 256 C 51.783 151.664 151.667 51.785 256 51.785 Z" style="stroke-width: 0.5px; fill: rgb(255, 255, 255);"/>
+  </g>
+  <path d="M 280.259 113.28 L 309.679 113.28 L 309.679 369.642 L 280.259 369.642 L 280.259 369.7 L 210.044 369.7 L 210.044 337.278 L 280.259 337.278 L 280.259 113.28 Z" style="fill: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; stroke-width: 18px; paint-order: stroke; stroke: rgb(255, 255, 255); transform-origin: 259.861px 241.488px;" transform="matrix(0.838671, 0.544639, -0.544639, 0.838671, -0.000005, -0.00001)"/>
+</svg>
