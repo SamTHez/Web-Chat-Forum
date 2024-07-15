@@ -11,7 +11,7 @@ function Home() {
     const [posts, setPosts] = useState([])
     const { league } = useParams()
     const [curLeague, setCurLeague] = useState(league)
-    const [sortBy, setSortBy] = useState('upvotes')
+    const [sortBy, setSortBy] = useState('created_at')
     const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {

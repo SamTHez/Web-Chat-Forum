@@ -501,7 +501,7 @@ a {
   font-size: var(--s-font);
   margin-bottom: 4rem;
   padding: 0rem 3rem;
-  min-height: 8rem;
+  min-height: 12rem;
 }
 
 .dp-image {
