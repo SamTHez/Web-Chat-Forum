@@ -1,6 +1,4 @@
-# Web Development Final Project - *Sport Chat Web Forum*
-
-Submitted by: **Sam Hezel**
+#*Sport Chat Web Forum*
 
 ## Features
 - **A create form that allows the user to create posts**
